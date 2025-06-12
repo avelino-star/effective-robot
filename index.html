@@ -234,14 +234,12 @@
       box-shadow: 0 0 10px #00ff4055;
     }
 
-    .testimonial-img {
-      width: 48px;
-      height: 48px;
+    .testimonial img {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
-      flex-shrink: 0;
       border: 2px solid #00ff40;
-      box-shadow: 0 0 10px #00ff40aa;
     }
   </style>
 </head>
@@ -251,7 +249,42 @@
 
   <div class="main-container">
     <div class="content-wrapper">
-      <!-- (conteúdo omitido por brevidade - permanece o mesmo) -->
+      <div class="image-container">
+        <div class="drag-text">ARRASTE PRA BAIXO</div>
+        <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" alt="Pacotes Mayres Avelino" class="product-image">
+      </div>
+
+      <div class="cta-section">
+        <h1 class="cta-heading">ESCOLHA:</h1>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button purple-btn">Pack Vip</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button pink-btn">Pack Completo</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button yellow-btn">Pack do Pezinho</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228f15-577f-402f-99c3-a4596c1d55db" class="cta-button red-btn">Pack Personalizado</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button blue-btn">Chamada de Video</a>
+        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button whatsapp-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          Enviar Comprovante
+        </a>
+        <p class="disclaimer"><strong>ATENÇÃO: O conteúdo comprado será enviado a você no Whatsapp assim que enviar o comprovante!</strong></p>
+      </div>
+
+      <div class="testimonials">
+        <h2 class="testimonial-heading">Elogios de Clientes 😍</h2>
+        <div class="testimonial-list">
+          <div class="testimonial">
+            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1094.png?raw=true" alt="Cliente 1">
+            <p>"Simplesmente perfeita! Entrega rápida e conteúdo surreal. Já virei cliente fixa!"</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1096.png?raw=true" alt="Cliente 2">
+            <p>"O melhor pack que já comprei. Qualidade absurda e ainda super atenciosa!"</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1097.png?raw=true" alt="Cliente 3">
+            <p>"Ela é maravilhosa. Conteúdo exclusivo mesmo, vale cada centavo."</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -278,15 +311,16 @@
       const size = Math.random() * 3 + 2;
       star.style.width = `${size}px`;
       star.style.height = `${size}px`;
+      star.style.animation = `shooting ${Math.random() * 1.5 + 1}s linear forwards`;
       shootingContainer.appendChild(star);
-      star.style.animation = `shooting ${Math.random() * 1.5 + 0.5}s ease-in-out forwards`;
-
-      setTimeout(() => {
-        shootingContainer.removeChild(star);
-      }, 2000);
+      setTimeout(() => star.remove(), 2000);
     }
 
-    setInterval(createShootingStar, 1000);
+    setInterval(() => {
+      for (let i = 0; i < 10; i++) {
+        setTimeout(createShootingStar, i * 100);
+      }
+    }, 1000);
   </script>
 </body>
 </html>
