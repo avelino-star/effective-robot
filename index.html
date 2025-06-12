@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mayres Avelino | Catálogo Premium</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
   <style>
     :root {
       --primary: #25D366;
@@ -12,9 +12,8 @@
       --text: #f5f5f7;
       --text-secondary: #a1a1a6;
       --bg: #000;
-      --card-bg: rgba(22, 22, 23, 0.8);
-      --glow: 0 0 20px rgba(37, 211, 102, 0.4);
-      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --glow: 0 0 30px rgba(37, 211, 102, 0.5);
+      --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -24,79 +23,83 @@
     }
 
     body {
-      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       overflow-x: hidden;
-      line-height: 1.5;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    .hero {
+    .main-container {
       position: relative;
       width: 100%;
-      padding: 80px 20px;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      z-index: 1;
+      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+    .content-wrapper {
+      position: relative;
       width: 100%;
+      max-width: 1400px;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(37, 211, 102, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
-      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
     }
 
-    .product-showcase {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .image-container {
+      position: relative;
+      width: 60%;
+      height: 80%;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      perspective: 1500px;
     }
 
     .product-image {
-      width: 100%;
-      max-width: 800px;
+      width: auto;
       height: auto;
-      margin: 0 auto;
-      border-radius: 18px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
-      transition: var(--transition);
-      will-change: transform;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      transform-style: preserve-3d;
+      animation: float 8s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(37, 211, 102, 0.3));
     }
 
-    .product-image:hover {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.02, 1.02, 1.02);
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-20px) rotateX(2deg) rotateY(2deg); }
     }
 
     .cta-section {
-      margin: 60px 0;
-      text-align: center;
+      width: 35%;
+      opacity: 0;
+      transform: translateX(50px);
+      animation: fadeInRight 1.2s 0.6s forwards;
+    }
+
+    @keyframes fadeInRight {
+      to { opacity: 1; transform: translateX(0); }
     }
 
     .cta-heading {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 30px;
-      letter-spacing: -0.5px;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
       background: linear-gradient(90deg, #fff, var(--text-secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      line-height: 1.2;
     }
 
     .cta-button {
@@ -105,10 +108,10 @@
       justify-content: center;
       background-color: var(--primary);
       color: white;
-      font-size: 21px;
+      font-size: 1.2rem;
       font-weight: 500;
-      padding: 18px 45px;
-      margin: 15px 0;
+      padding: 1rem 2.5rem;
+      margin: 1rem 0;
       border-radius: 50px;
       text-decoration: none;
       transition: var(--transition);
@@ -119,34 +122,16 @@
       cursor: pointer;
     }
 
-    .cta-button::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
-      transform: translateX(-100%);
-      transition: var(--transition);
-    }
-
     .cta-button:hover {
       background-color: var(--primary-hover);
-      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
-      transform: translateY(-2px);
-    }
-
-    .cta-button:hover::after {
-      transform: translateX(100%);
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.7);
+      transform: translateY(-3px);
     }
 
     .disclaimer {
-      font-size: 14px;
+      font-size: 0.9rem;
       color: var(--text-secondary);
-      max-width: 500px;
-      margin: 30px auto 0;
-      padding: 0 20px;
+      margin-top: 2rem;
       line-height: 1.6;
     }
 
@@ -155,83 +140,172 @@
       font-weight: 500;
     }
 
-    /* Efeitos Apple-like */
-    .scroll-fade {
+    /* Scroll down arrow */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
       opacity: 0;
-      transform: translateY(30px);
-      transition: var(--transition);
+      animation: fadeIn 1s 1.8s forwards;
     }
 
-    .scroll-fade.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .scroll-text {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-secondary);
+    }
+
+    .arrow-down {
+      width: 24px;
+      height: 24px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* Side arrows */
+    .side-arrows {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 10;
+    }
+
+    .side-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+    }
+
+    .side-arrow:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .side-arrow svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--text);
     }
 
     /* Responsivo */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 60px 20px;
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 5rem;
       }
       
-      .cta-heading {
-        font-size: 24px;
+      .image-container {
+        width: 100%;
+        height: 50%;
       }
       
-      .cta-button {
-        font-size: 18px;
-        padding: 16px 35px;
+      .cta-section {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
       }
       
-      .product-image {
-        max-width: 100%;
+      .side-arrows {
+        display: none;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       .cta-heading {
-        font-size: 22px;
+        font-size: 2rem;
       }
       
       .cta-button {
-        font-size: 16px;
-        padding: 14px 30px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="product-showcase">
-      <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" 
-           alt="Catálogo de Produtos Mayres Avelino" 
-           class="product-image scroll-fade">
+  <div class="main-container">
+    <div class="content-wrapper">
+      <div class="image-container">
+        <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" 
+             alt="Catálogo Mayres Avelino" 
+             class="product-image">
+      </div>
+      
+      <div class="cta-section">
+        <h1 class="cta-heading">Coleção Exclusiva</h1>
+        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button">
+          Comprar via WhatsApp
+        </a>
+        <p class="disclaimer">
+          <strong>ATENÇÃO:</strong> Contato apenas para compras. Mensagens sem interesse comercial serão ignoradas.
+        </p>
+      </div>
+      
+      <div class="side-arrows">
+        <div class="side-arrow">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </div>
+      </div>
     </div>
-
-    <div class="cta-section scroll-fade">
-      <h2 class="cta-heading">Faça seu pedido agora mesmo</h2>
-      <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button">
-        <span>Comprar via WhatsApp</span>
-      </a>
-      <p class="disclaimer">
-        <strong>ATENÇÃO:</strong> Este canal é exclusivo para vendas. Mensagens sem intenção de compra serão ignoradas.
-      </p>
+    
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll Down</span>
+      <svg class="arrow-down" viewBox="0 0 24 24">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="currentColor"/>
+      </svg>
     </div>
-  </section>
+  </div>
 
   <script>
-    // Efeito de aparecimento suave ao rolar
-    document.addEventListener('DOMContentLoaded', () => {
-      const fadeElements = document.querySelectorAll('.scroll-fade');
-      
-      const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      fadeElements.forEach(el => fadeObserver.observe(el));
+    // Efeito de rolagem suave para as setas
+    document.querySelector('.side-arrow').addEventListener('click', () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+
+    document.querySelector('.scroll-indicator').addEventListener('click', () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+
+    // Efeito parallax na imagem
+    window.addEventListener('scroll', () => {
+      const image = document.querySelector('.product-image');
+      const scrollPosition = window.pageYOffset;
+      image.style.transform = `translateY(${scrollPosition * 0.2}px) rotateX(${scrollPosition * 0.05}deg) rotateY(${scrollPosition * 0.05}deg)`;
     });
   </script>
 </body>
