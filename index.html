@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mayres Avelino | Oferta por Tempo Limitado</title>
+  <title>Mayres Avelino | Conteúdos Exclusivos</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
   <style>
     :root {
       --primary: #25D366;
       --primary-hover: #128C7E;
+      --blue: #4285F4;
+      --blue-hover: #3367D6;
+      --pink: #FF4081;
+      --pink-hover: #E91E63;
+      --purple: #9C27B0;
+      --purple-hover: #7B1FA2;
+      --yellow: #FFC107;
+      --yellow-hover: #FFA000;
+      --red: #FF5252;
+      --red-hover: #E53935;
       --text: #f5f5f7;
       --text-secondary: #a1a1a6;
       --bg: #000;
-      --glow: 0 0 30px rgba(37, 211, 102, 0.5);
-      --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     * {
@@ -41,6 +50,7 @@
       height: 100%;
       z-index: -1;
       overflow: hidden;
+      transition: transform 0.1s linear;
     }
 
     .star {
@@ -138,44 +148,107 @@
     }
 
     .cta-heading {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       color: #fff;
       text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
       line-height: 1.2;
+      text-transform: uppercase;
     }
 
     .cta-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--primary);
       color: white;
-      font-size: 1.2rem;
-      font-weight: 500;
-      padding: 1rem 2.5rem;
-      margin: 1rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      margin: 0.5rem 0;
       border-radius: 50px;
       text-decoration: none;
       transition: var(--transition);
-      box-shadow: var(--glow);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       position: relative;
       overflow: hidden;
       border: none;
       cursor: pointer;
+      width: 100%;
+      max-width: 300px;
     }
 
-    .cta-button:hover {
+    .whatsapp-btn {
+      background-color: var(--primary);
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn:hover {
       background-color: var(--primary-hover);
-      box-shadow: 0 0 40px rgba(37, 211, 102, 0.7);
+      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .blue-btn {
+      background-color: var(--blue);
+      box-shadow: 0 0 20px rgba(66, 133, 244, 0.4);
+    }
+
+    .blue-btn:hover {
+      background-color: var(--blue-hover);
+      box-shadow: 0 0 30px rgba(66, 133, 244, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .pink-btn {
+      background-color: var(--pink);
+      box-shadow: 0 0 20px rgba(255, 64, 129, 0.4);
+    }
+
+    .pink-btn:hover {
+      background-color: var(--pink-hover);
+      box-shadow: 0 0 30px rgba(255, 64, 129, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .purple-btn {
+      background-color: var(--purple);
+      box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+    }
+
+    .purple-btn:hover {
+      background-color: var(--purple-hover);
+      box-shadow: 0 0 30px rgba(156, 39, 176, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .yellow-btn {
+      background-color: var(--yellow);
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+      color: #000;
+    }
+
+    .yellow-btn:hover {
+      background-color: var(--yellow-hover);
+      box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .red-btn {
+      background-color: var(--red);
+      box-shadow: 0 0 20px rgba(255, 82, 82, 0.4);
+    }
+
+    .red-btn:hover {
+      background-color: var(--red-hover);
+      box-shadow: 0 0 30px rgba(255, 82, 82, 0.6);
       transform: translateY(-3px);
     }
 
     .disclaimer {
       font-size: 0.9rem;
       color: #ff4444;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       line-height: 1.6;
       font-weight: 500;
       text-shadow: 0 0 8px rgba(255, 68, 68, 0.3);
@@ -199,15 +272,20 @@
         text-align: center;
         margin-top: 3rem;
       }
+
+      .cta-button {
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 768px) {
       .cta-heading {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       
       .cta-button {
         font-size: 1rem;
+        padding: 0.9rem 1.8rem;
       }
     }
   </style>
@@ -221,14 +299,29 @@
     <div class="content-wrapper">
       <div class="image-container">
         <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" 
-             alt="Oferta Mayres Avelino" 
+             alt="Pacotes Mayres Avelino" 
              class="product-image">
       </div>
       
       <div class="cta-section">
-        <h1 class="cta-heading">DESCONTO ACABA HOJE!</h1>
-        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button">
-          Comprar via WhatsApp
+        <h1 class="cta-heading">ESCOLHA:</h1>
+        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button whatsapp-btn">
+          Enviar Comprovante
+        </a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button blue-btn">
+          Chamada de Video
+        </a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button pink-btn">
+          Pack Completo
+        </a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button purple-btn">
+          Pack Vip
+        </a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button yellow-btn">
+          Pack do Pezinho
+        </a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228f15-577f-402f-99c3-a4596c1d55db" class="cta-button red-btn">
+          Pack Personalizado
         </a>
         <p class="disclaimer">
           ATENÇÃO: Esse número é apenas para compras. Mensagens alheias serão ignoradas
@@ -286,10 +379,21 @@
     createShootingStar();
     setTimeout(createShootingStar, 800);
 
-    // Efeito parallax na imagem
+    // Efeito de velocidade ao rolar
+    let lastScrollPosition = 0;
+    let scrollVelocity = 0;
+    const stars = document.querySelector('.stars');
+
     window.addEventListener('scroll', () => {
-      const image = document.querySelector('.product-image');
       const scrollPosition = window.pageYOffset;
+      scrollVelocity = scrollPosition - lastScrollPosition;
+      lastScrollPosition = scrollPosition;
+      
+      // Aplicar efeito de velocidade nas estrelas
+      stars.style.transform = `translateY(${scrollVelocity * 0.3}px)`;
+      
+      // Efeito parallax na imagem
+      const image = document.querySelector('.product-image');
       image.style.transform = `translateY(${scrollPosition * 0.2}px) rotateX(${scrollPosition * 0.05}deg) rotateY(${scrollPosition * 0.05}deg)`;
     });
   </script>
