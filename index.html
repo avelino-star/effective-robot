@@ -32,6 +32,29 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Céu estrelado */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle var(--duration, 5s) infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
     .main-container {
       position: relative;
       width: 100%;
@@ -130,14 +153,11 @@
 
     .disclaimer {
       font-size: 0.9rem;
-      color: var(--text-secondary);
+      color: #ff4444;
       margin-top: 2rem;
       line-height: 1.6;
-    }
-
-    .disclaimer strong {
-      color: #ff453a;
       font-weight: 500;
+      text-shadow: 0 0 8px rgba(255, 68, 68, 0.3);
     }
 
     /* Scroll down arrow */
@@ -178,42 +198,6 @@
       60% { transform: translateY(-5px); }
     }
 
-    /* Side arrows */
-    .side-arrows {
-      position: absolute;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      z-index: 10;
-    }
-
-    .side-arrow {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      opacity: 0;
-      animation: fadeIn 1s 1.2s forwards;
-    }
-
-    .side-arrow:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .side-arrow svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--text);
-    }
-
     /* Responsivo */
     @media (max-width: 1024px) {
       .content-wrapper {
@@ -232,10 +216,6 @@
         text-align: center;
         margin-top: 3rem;
       }
-      
-      .side-arrows {
-        display: none;
-      }
     }
 
     @media (max-width: 768px) {
@@ -250,6 +230,9 @@
   </style>
 </head>
 <body>
+  <!-- Céu estrelado -->
+  <div class="stars" id="stars"></div>
+
   <div class="main-container">
     <div class="content-wrapper">
       <div class="image-container">
@@ -264,16 +247,8 @@
           Comprar via WhatsApp
         </a>
         <p class="disclaimer">
-          <strong>ATENÇÃO:</strong> Contato apenas para compras. Mensagens sem interesse comercial serão ignoradas.
+          ATENÇÃO: Esse número é apenas para compras. Mensagens alheias serão ignoradas
         </p>
-      </div>
-      
-      <div class="side-arrows">
-        <div class="side-arrow">
-          <svg viewBox="0 0 24 24">
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-          </svg>
-        </div>
       </div>
     </div>
     
@@ -286,14 +261,30 @@
   </div>
 
   <script>
-    // Efeito de rolagem suave para as setas
-    document.querySelector('.side-arrow').addEventListener('click', () => {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth'
-      });
-    });
+    // Criar estrelas
+    const starsContainer = document.getElementById('stars');
+    const starCount = 200;
+    
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      
+      // Tamanho aleatório entre 1px e 3px
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // Posição aleatória
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      
+      // Duração da animação aleatória
+      star.style.setProperty('--duration', `${Math.random() * 5 + 3}s`);
+      
+      starsContainer.appendChild(star);
+    }
 
+    // Efeito de rolagem suave
     document.querySelector('.scroll-indicator').addEventListener('click', () => {
       window.scrollTo({
         top: window.innerHeight,
