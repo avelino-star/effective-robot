@@ -13,7 +13,11 @@
       --bg: #000;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -25,7 +29,17 @@
       background: linear-gradient(180deg, #000 0%, #050505 100%);
     }
 
-    .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
     .star {
       position: absolute;
       background-color: #fff;
@@ -43,10 +57,24 @@
       z-index: -1;
     }
 
-    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
-    @keyframes shooting { 0% { transform: translate(0, 0); opacity: 1; } 100% { transform: translate(1000px, 600px); opacity: 0; } }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
 
-    .main-container { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 0; }
+    @keyframes shooting {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(1000px, 600px); opacity: 0; }
+    }
+
+    .main-container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+    }
 
     .content-wrapper {
       max-width: 1200px;
@@ -58,7 +86,10 @@
       animation: fadeIn 1.2s ease-out forwards;
     }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     .image-container {
       display: flex;
@@ -68,17 +99,28 @@
       filter: drop-shadow(0 0 20px #ff4444aa);
     }
 
-    .drag-text, .cta-heading {
+    .drag-text {
+      font-size: 2rem;
       font-weight: 700;
+      color: #ff4444;
+      text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444;
+      margin-bottom: 1rem;
+      animation: pulse 1s infinite alternate;
+    }
+
+    .cta-heading {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
       color: #ff4444;
       text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444;
       animation: pulse 1s infinite alternate;
     }
 
-    .drag-text { font-size: 2rem; margin-bottom: 1rem; }
-    .cta-heading { font-size: 3rem; margin-bottom: 2rem; }
-
-    @keyframes pulse { 0% { opacity: 0.8; } 100% { opacity: 1; text-shadow: 0 0 15px #ff4444, 0 0 30px #ff4444; } }
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; text-shadow: 0 0 15px #ff4444, 0 0 30px #ff4444; }
+    }
 
     .product-image {
       max-width: 300px;
@@ -87,11 +129,22 @@
       animation: float 8s ease-in-out infinite;
       transition: transform 0.4s ease;
     }
-    .product-image:hover { transform: scale(1.03) rotateX(10deg) rotateY(-10deg); }
 
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    .product-image:hover {
+      transform: scale(1.03) rotateX(10deg) rotateY(-10deg);
+    }
 
-    .cta-section { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .cta-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
 
     .cta-button {
       display: inline-block;
@@ -116,8 +169,7 @@
       background-position: top right;
     }
 
-    .blue-btn { background: linear-gradient(135deg, #4285F4, #73b4ff); }
-
+    .blue-btn { background: linear-gradient(135deg, #4285F4, #73b4ff); box-shadow: 0 0 40px #00ff00cc, 0 0 60px #00ff0044 inset; }
     .pink-btn { background: linear-gradient(135deg, #FF4081, #ff79b0); }
     .purple-btn { background: linear-gradient(135deg, #9C27B0, #d17ee5); }
     .yellow-btn { background: linear-gradient(135deg, #FFC107, #ffe17c); color: #000; }
@@ -131,7 +183,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 0 50px #00ff00cc, 0 0 80px #00ff0044 inset;
+      box-shadow: 0 0 30px #00ff00cc, 0 0 60px #00ff0044 inset; /* aumentei a sombra verde */
     }
 
     .whatsapp-btn img {
@@ -185,7 +237,11 @@
       text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444;
     }
 
-    .testimonial-list { display: flex; flex-direction: column; gap: 1rem; }
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     .testimonial {
       display: flex;
@@ -202,14 +258,7 @@
       justify-content: center;
     }
 
-    .testimonial img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #ff4444;
-      flex-shrink: 0;
-    }
+    /* removi .testimonial img para não usar imagens */
 
     .stars-rating {
       color: #ff4444;
@@ -219,6 +268,15 @@
       user-select: none;
       width: 100%;
       text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      color: #fff;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem; /* menor tamanho */
     }
   </style>
 </head>
@@ -236,22 +294,22 @@
       <div class="cta-section">
         <h1 class="cta-heading">ESCOLHA:</h1>
 
-        <a href="#" class="cta-button purple-btn">Pack Vip</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button purple-btn">Pack Vip</a>
         <div class="cta-description">Seleção íntima e provocante de vídeos e fotos +18.</div>
 
-        <a href="#" class="cta-button pink-btn">Conteúdo Completo</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button pink-btn">Conteúdo Completo</a>
         <div class="cta-description">Todo o meu conteúdo completo sem censura, fodas, siririca, fantasia, anal, tesourinha e mais.</div>
 
-        <a href="#" class="cta-button yellow-btn">Pack do Pezinho</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button yellow-btn">Pack do Pezinho</a>
         <div class="cta-description">Vídeos e fotos focados nos pés, para fetiches especiais.</div>
 
-        <a href="#" class="cta-button red-btn">Pack Personalizado</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9f228f15-577f-402f-99c3-a4596c1d55db" class="cta-button red-btn">Pack Personalizado</a>
         <div class="cta-description">Você escolhe o tema, eu crio conteúdo exclusivo.</div>
 
-        <a href="#" class="cta-button blue-btn">Chamada de Vídeo</a>
+        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button blue-btn">Chamada de Vídeo</a>
         <div class="cta-description">Meu unico objetivo é te fazer gozar, o tempo não é um problema, você que manda.</div>
 
-        <a href="#" class="cta-button whatsapp-btn">
+        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button whatsapp-btn">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
           Enviar Comprovante
         </a>
@@ -263,17 +321,14 @@
         <h2 class="testimonial-heading">Elogios de Clientes 😍</h2>
         <div class="testimonial-list">
           <div class="testimonial">
-            <img src="#" alt="Cliente 1">
             <p>"Gostosa pra caralho! Que mulher absurda."</p>
             <div class="stars-rating">★★★★★</div>
           </div>
           <div class="testimonial">
-            <img src="#" alt="Cliente 2">
             <p>"Que bunda deliciosa! Não dá, quero mais."</p>
             <div class="stars-rating">★★★★★</div>
           </div>
           <div class="testimonial">
-            <img src="#" alt="Cliente 3">
             <p>"Já gozei só com o teaser... Imagina o resto!"</p>
             <div class="stars-rating">★★★★★</div>
           </div>
@@ -282,7 +337,7 @@
     </div>
   </div>
 
-  <footer style="text-align:center; padding:20px 0; color:#fff; font-weight:bold; font-family: 'Montserrat', sans-serif;">
+  <footer>
     Copyright © 2025 Mayres Avelino. Todos os direitos reservados. Compra segura garantida.
   </footer>
 
