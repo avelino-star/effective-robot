@@ -169,7 +169,11 @@
       background-position: top right;
     }
 
-    .blue-btn { background: linear-gradient(135deg, #4285F4, #73b4ff); box-shadow: 0 0 40px #00ff00cc, 0 0 60px #00ff0044 inset; }
+    .blue-btn { 
+      background: linear-gradient(135deg, #4285F4, #73b4ff); 
+      /* removida sombra verde */
+      box-shadow: 0 0 15px #4285f4cc, 0 0 25px #4285f444 inset;
+    }
     .pink-btn { background: linear-gradient(135deg, #FF4081, #ff79b0); }
     .purple-btn { background: linear-gradient(135deg, #9C27B0, #d17ee5); }
     .yellow-btn { background: linear-gradient(135deg, #FFC107, #ffe17c); color: #000; }
@@ -183,7 +187,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      box-shadow: 0 0 30px #00ff00cc, 0 0 60px #00ff0044 inset; /* aumentei a sombra verde */
+      box-shadow: 0 0 30px #00ff00cc, 0 0 60px #00ff0044 inset; /* mantida sombra verde */
     }
 
     .whatsapp-btn img {
@@ -258,7 +262,12 @@
       justify-content: center;
     }
 
-    /* removi .testimonial img para não usar imagens */
+    .testimonial img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
     .stars-rating {
       color: #ff4444;
@@ -276,7 +285,7 @@
       color: #fff;
       font-weight: 600;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem; /* menor tamanho */
+      font-size: 0.8rem; /* menor tamanho */
     }
   </style>
 </head>
@@ -321,14 +330,17 @@
         <h2 class="testimonial-heading">Elogios de Clientes 😍</h2>
         <div class="testimonial-list">
           <div class="testimonial">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente 1">
             <p>"Gostosa pra caralho! Que mulher absurda."</p>
             <div class="stars-rating">★★★★★</div>
           </div>
           <div class="testimonial">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 2">
             <p>"Que bunda deliciosa! Não dá, quero mais."</p>
             <div class="stars-rating">★★★★★</div>
           </div>
           <div class="testimonial">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Cliente 3">
             <p>"Já gozei só com o teaser... Imagina o resto!"</p>
             <div class="stars-rating">★★★★★</div>
           </div>
@@ -338,7 +350,7 @@
   </div>
 
   <footer>
-    Copyright © 2025 Mayres Avelino. Todos os direitos reservados. Compra segura garantida.
+    © 2025 Mayres Avelino. Todos os direitos reservados.
   </footer>
 
   <script>
