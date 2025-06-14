@@ -4,126 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mayres Avelino | Conteúdos Exclusivos</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #FF3B3B;
-      --primary-hover: #cc0000;
-      --text: #f5f5f7;
-      --bg: #000;
-    }
-
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(180deg, #000 0%, #050505 100%);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      perspective: 1500px;
+      background: linear-gradient(180deg, #000, #0a0a0a);
+      color: #f5f5f7;
+      text-align: center;
     }
 
     .image-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 0 20px #ff0000aa);
+      margin: 30px 0;
+      filter: drop-shadow(0 0 20px red);
     }
 
     .product-image {
-      max-width: 300px;
-      height: auto;
+      width: 300px;
       border-radius: 12px;
-      animation: float 8s ease-in-out infinite;
-      transition: transform 0.4s ease;
     }
 
-    .product-image:hover {
-      transform: scale(1.03) rotateX(10deg) rotateY(-10deg);
+    .cta-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 30px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+    .cta-button {
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+      width: 220px;
+      display: inline-block;
     }
 
-    .cta-section a {
-      margin-bottom: 2.5rem;
+    .purple-btn { background: #9b59b6; }
+    .pink-btn { background: #e91e63; }
+    .yellow-btn { background: #f39c12; }
+    .red-btn { background: #e74c3c; }
+    .blue-btn {
+      background: #2980b9;
+      box-shadow: 0 0 20px #00ff00;
+    }
+    .whatsapp-btn {
+      background: #25D366;
+      box-shadow: 0 0 20px #00ff40;
     }
 
     .cta-description {
       margin-top: 8px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #fff;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       border: 1px solid #FF3B3B;
-      border-radius: 10px;
-      padding: 10px 15px;
-      text-align: center;
-      box-shadow: 0 0 10px #ff3b3b55;
-      transition: all 0.3s ease;
-    }
-
-    .cta-description:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px #ff3b3baa;
-    }
-
-    .whatsapp-btn {
-      background: linear-gradient(135deg, #25D366, #1fb954);
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 0 25px #00ff40;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 0 25px #ffffff33;
-    }
-
-    .blue-btn {
-      box-shadow: 0 0 25px #00ff40aa;
+      border-radius: 8px;
+      padding: 8px 12px;
+      width: 240px;
     }
 
     .testimonials {
-      margin-top: 4rem;
-      padding: 2rem;
+      margin-top: 50px;
       border-top: 2px solid #FF3B3B;
-      width: 100%;
-      max-width: 800px;
-      text-align: center;
-    }
-
-    .testimonial-heading {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #FF3B3B;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px #FF3B3B, 0 0 20px #FF3B3B;
+      padding-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .testimonial {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #FF3B3B;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: left;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #FF3B3B;
-      color: #f5f5f7;
-      font-style: italic;
-      box-shadow: 0 0 10px #ff3b3b55;
-      margin-bottom: 1rem;
-      justify-content: space-between;
+      gap: 15px;
     }
 
     .testimonial img {
@@ -137,11 +100,12 @@
     .stars {
       color: gold;
       font-size: 1rem;
+      margin-top: 5px;
     }
 
     .footer {
-      margin-top: 3rem;
-      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
       font-size: 0.9rem;
       color: #888;
     }
@@ -150,10 +114,11 @@
 <body>
 
   <div class="image-container">
-    <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" alt="Pacotes Mayres Avelino" class="product-image">
+    <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" alt="Tabela" class="product-image">
   </div>
 
   <div class="cta-section">
+
     <a href="#" class="cta-button purple-btn">Pack Vip</a>
     <div class="cta-description">Fotos e vídeos íntimos pra te enlouquecer.</div>
 
@@ -169,32 +134,37 @@
     <a href="#" class="cta-button blue-btn">Chamada de Vídeo</a>
     <div class="cta-description">Meu único objetivo é te fazer gozar, o tempo não é um problema, você que manda.</div>
 
-    <a href="#" class="cta-button whatsapp-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      Enviar Comprovante
-    </a>
+    <a href="#" class="cta-button whatsapp-btn">Enviar Comprovante</a>
+
   </div>
 
   <div class="testimonials">
-    <h2 class="testimonial-heading">Elogios de Clientes 😍</h2>
+    <h2 style="color:#FF3B3B; margin-bottom: 20px;">Elogios de Clientes 😍</h2>
 
     <div class="testimonial">
       <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1094.png?raw=true" alt="Cliente 1">
-      <p>"Gostosa pra caralho! Melhor compra que já fiz."</p>
-      <span class="stars">★★★★★</span>
+      <div>
+        <p>"Gostosa pra caralho! Melhor compra que já fiz."</p>
+        <div class="stars">★★★★★</div>
+      </div>
     </div>
 
     <div class="testimonial">
       <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1096.png?raw=true" alt="Cliente 2">
-      <p>"Que bunda deliciosa, impossível não gozar vendo."</p>
-      <span class="stars">★★★★★</span>
+      <div>
+        <p>"Que bunda deliciosa, impossível não gozar vendo."</p>
+        <div class="stars">★★★★★</div>
+      </div>
     </div>
 
     <div class="testimonial">
       <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1097.png?raw=true" alt="Cliente 3">
-      <p>"Mano, já quero mais, que mulher incrível."</p>
-      <span class="stars">★★★★★</span>
+      <div>
+        <p>"Mano, já quero mais, que mulher incrível."</p>
+        <div class="stars">★★★★★</div>
+      </div>
     </div>
+
   </div>
 
   <div class="footer">
