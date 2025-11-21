@@ -1,326 +1,746 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mayres Avelino | Conteúdos Exclusivos</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
-  <style>
-    :root {
-      --primary: #25D366;
-      --primary-hover: #128C7E;
-      --text: #f5f5f7;
-      --bg: #000;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayres Avelino - OnlyFans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #00aff0;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-icons i {
+            font-size: 20px;
+            color: #ffffff;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        .logo-img {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .profile-banner {
+            height: 120px;
+            background: #00aff0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+        
+        .profile-section {
+            padding: 20px 15px;
+            background: linear-gradient(to bottom, #ffffff, #f1f8ff);
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            margin-top: -50px; /* Aumentado para fazer a foto subir mais */
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px; /* Ajustado para subir o nome e status */
+            margin-left: -10px; /* Movendo as informações mais para a esquerda */
+        }
+        
+        .profile-info h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .verified-badge {
+            color: #00aff0;
+            font-size: 18px;
+        }
+        
+        .profile-info p {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 2px 0;
+        }
+        
+        .online-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+        
+        .profile-bio {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-top: 10px; /* Adicionado espaço acima da bio */
+        }
+        
+        .profile-bio p {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .profile-bio .highlight {
+            color: #00aff0;
+            font-weight: 500;
+        }
+        
+        .subscription-banner {
+            background: linear-gradient(to right, #00aff0, #0080ff);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 175, 240, 0.3);
+            color: white;
+        }
+        
+        .subscription-banner h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .subscription-banner p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .price-tag {
+            background-color: #ffffff;
+            color: #00aff0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .original-price {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .subscribe-button {
+            background-color: #ffffff;
+            color: #00aff0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .price-tag-link {
+    background-color: #ffffff;
+    color: #00aff0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.subscribe-button-link {
+    background-color: #ffffff;
+    color: #00aff0;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      perspective: 1500px;
-      background: linear-gradient(180deg, #000 0%, #050505 100%);
-    }
-
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .star {
-      position: absolute;
-      background-color: #fff;
-      border-radius: 50%;
-      animation: twinkle 5s infinite ease-in-out;
-    }
-
-    .shooting-star {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: linear-gradient(90deg, rgba(255,255,255,1), transparent);
-      border-radius: 50%;
-      opacity: 0;
-      z-index: -1;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
-
-    @keyframes shooting {
-      0% { transform: translate(0, 0); opacity: 1; }
-      100% { transform: translate(1000px, 600px); opacity: 0; }
-    }
-
-    .main-container {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 0;
-    }
-
-    .content-wrapper {
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 5%;
-      transform-style: preserve-3d;
-      animation: fadeIn 1.2s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 0 20px #00ff40aa);
-    }
-
-    .drag-text {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #00ff40;
-      text-shadow: 0 0 10px #00ff40, 0 0 20px #00ff40;
-      margin-bottom: 1rem;
-      animation: pulse 1s infinite alternate;
-    }
-
-    .cta-heading {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #00ff40;
-      text-shadow: 0 0 10px #00ff40, 0 0 20px #00ff40;
-      animation: pulse 1s infinite alternate;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.8; }
-      100% { opacity: 1; text-shadow: 0 0 15px #00ff40, 0 0 30px #00ff40; }
-    }
-
-    .product-image {
-      max-width: 300px;
-      height: auto;
-      border-radius: 12px;
-      animation: float 8s ease-in-out infinite;
-      transition: transform 0.4s ease;
-    }
-
-    .product-image:hover {
-      transform: scale(1.03) rotateX(10deg) rotateY(-10deg);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    .cta-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      text-align: center;
-      color: #fff;
-      width: 100%;
-      max-width: 300px;
-      transition: all 0.3s ease;
-      background-size: 300% 300%;
-      background-position: center;
-      box-shadow: 0 0 15px #ffffff15, 0 0 30px #ffffff10 inset;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 0 25px #ffffff33;
-      background-position: top right;
-    }
-
-    .blue-btn { background: linear-gradient(135deg, #4285F4, #73b4ff); }
-    .pink-btn { background: linear-gradient(135deg, #FF4081, #ff79b0); }
-    .purple-btn { background: linear-gradient(135deg, #9C27B0, #d17ee5); }
-    .yellow-btn { background: linear-gradient(135deg, #FFC107, #ffe17c); color: #000; }
-    .red-btn { background: linear-gradient(135deg, #FF5252, #ff9494); }
-    .whatsapp-btn {
-      background: linear-gradient(135deg, #25D366, #1fb954);
-      margin-top: 2rem;
-      animation: float 5s ease-in-out infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .whatsapp-btn img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .disclaimer {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #ff4444;
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .testimonials {
-      margin-top: 4rem;
-      padding: 2rem;
-      border-top: 2px solid #00ff40;
-      width: 100%;
-      max-width: 800px;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-heading {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #00ff40;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px #00ff40, 0 0 20px #00ff40;
-    }
-
-    .testimonial-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .testimonial {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #00ff40;
-      color: #f5f5f7;
-      font-style: italic;
-      box-shadow: 0 0 10px #00ff4055;
-    }
-
-    .testimonial img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #00ff40;
-    }
-  </style>
+.price-tag-link:hover,
+.subscribe-button-link:hover {
+    background-color: #00aff0;
+    color: #ffffff;
+}
+        .subscribe-button:hover {
+            background-color: #00aff0;
+            color: #ffffff;
+        }
+        
+        .subscription-plans {
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subscription-plans h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #00aff0;
+        }
+        
+        .plan {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            align-items: center;
+        }
+        
+        .plan:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-details {
+            flex: 2;
+        }
+        
+        .plan-price {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .plan-price-button {
+            background: linear-gradient(to right, #00aff0, #0080ff);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .plan-price-button:hover {
+            background: linear-gradient(to right, #0080ff, #00aff0);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .plan-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #212529;
+        }
+        
+        .plan-stats {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .posts-section {
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .posts-section h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #00aff0;
+            padding-left: 10px;
+            border-left: 3px solid #00aff0;
+        }
+        
+        .post {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .post-media {
+            height: 400px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .post-media.locked:after {
+            content: '\f023';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: #fff;
+            background: rgba(0, 175, 240, 0.8);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .post-info {
+            padding: 15px;
+        }
+        
+        .post-text {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #212529;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #6c757d;
+            font-size: 12px;
+        }
+        
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #e0e0e0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #6c757d;
+            font-size: 12px;
+        }
+        
+        .nav-item active {
+            color: #00aff0;
+        }
+        
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #00aff0;
+        }
+        
+        .modal-text {
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: #212529;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .modal-button {
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-button.primary {
+            background: linear-gradient(to right, #00aff0, #0080ff);
+            color: white;
+        }
+        
+        .modal-button.secondary {
+            background-color: #f8f9fa;
+            color: #00aff0;
+            border: 1px solid #00aff0;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #6c757d;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 480px) {
+            .profile-avatar {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .profile-info h1 {
+                font-size: 18px;
+            }
+            
+            .post-media {
+                height: 300px;
+            }
+            
+            .profile-header {
+                margin-top: -40px; /* Ajuste para mobile */
+            }
+            
+            .profile-info {
+                margin-top: 35px; /* Ajuste para mobile */
+            }
+            
+            .plan-price-button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .profile-section, .subscription-banner, .subscription-plans, .post {
+            animation: fadeIn 0.5s ease-out;
+        }
+.paypal-email {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+    </style>
 </head>
 <body>
-  <div class="stars" id="stars"></div>
-  <div id="shooting-stars"></div>
-
-  <div class="main-container">
-    <div class="content-wrapper">
-      <div class="image-container">
-        <div class="drag-text">ARRASTE PRA BAIXO</div>
-        <img src="https://github.com/avelino-star/INSTA/blob/main/TABELA%20DE%20PREC%CC%A7OS.png?raw=true" alt="Pacotes Mayres Avelino" class="product-image">
-      </div>
-
-      <div class="cta-section">
-        <h1 class="cta-heading">ESCOLHA:</h1>
-        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button purple-btn">Pack Vip</a>
-        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button pink-btn">Pack Completo</a>
-        <a href="https://app.pushinpay.com.br/service/pay/9f228ee1-9c66-440a-bb2f-d01e74e2f09c" class="cta-button yellow-btn">Pack do Pezinho</a>
-        <a href="https://app.pushinpay.com.br/service/pay/9f228f15-577f-402f-99c3-a4596c1d55db" class="cta-button red-btn">Pack Personalizado</a>
-        <a href="https://app.pushinpay.com.br/service/pay/9F212923-A2D9-4889-9576-0BE867F81AE3/9f228e02-4a29-462e-97d2-26284f72d1fc" class="cta-button blue-btn">Chamada de Video</a>
-        <a href="https://wa.me/message/FW3JE7JY2PAFL1" class="cta-button whatsapp-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-          Enviar Comprovante
-        </a>
-        <p class="disclaimer"><strong>ATENÇÃO: O conteúdo comprado será enviado a você no Whatsapp assim que enviar o comprovante!</strong></p>
-      </div>
-
-      <div class="testimonials">
-        <h2 class="testimonial-heading">Elogios de Clientes 😍</h2>
-        <div class="testimonial-list">
-          <div class="testimonial">
-            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1094.png?raw=true" alt="Cliente 1">
-            <p>"Simplesmente perfeita! Entrega rápida e conteúdo surreal. Já virei cliente fixa!"</p>
-          </div>
-          <div class="testimonial">
-            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1096.png?raw=true" alt="Cliente 2">
-            <p>"O melhor pack que já comprei. Qualidade absurda e ainda super atenciosa!"</p>
-          </div>
-          <div class="testimonial">
-            <img src="https://github.com/avelino-star/INSTA-3/blob/main/IMG_1097.png?raw=true" alt="Cliente 3">
-            <p>"Ela é maravilhosa. Conteúdo exclusivo mesmo, vale cada centavo."</p>
-          </div>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-arrow-left"></i>
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/IMG_2863.PNG?raw=true" alt="OnlyFans Logo">
+                </div>
+                <span>OnlyFans</span>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
         </div>
-      </div>
+        
+        <div class="profile-banner">
+            <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B6226022-FFB1-4B73-8296-400E01550852%20(1).jpg?raw=true" alt="Mayres Avelino Banner">
+        </div>
+        
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://github.com/avelino-star/ONLYFANS/blob/main/B7852DE7-D80D-429E-86E2-C3D6C1DB529B.jpeg?raw=true" alt="Mayres Avelino">
+                </div>
+                <div class="profile-info">
+                    <h1>Mayres Avelino <i class="fas fa-check-circle verified-badge"></i></h1>
+                    <p>Online now <span class="online-status"></span></p>
+                </div>
+            </div>
+            
+            <div class="profile-bio">
+                <p>where you see my NAUGHTY SIDE 😊</p>
+                <p>I never expected to do this... but screw it, full sending...</p>
+                <p class="highlight">More information</p>
+            </div>
+        </div>
+        
+        <div class="subscription-banner">
+            <h2>SUBSCRIPTION</h2>
+            <p>Limited offer: 50% discount for the first 31 days!</p>
+          <a href="https://checkout.stripe.com/c/pay/cs_live_a1J6qUMTgkH5KcyjPTEF9zSSS1LVXZ8cbJvOXAwcqNpDOHAiPTI0DavqXu#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="price-tag-link">$5 for 31 days</a>
+<div class="original-price">Normal Price $10 /month</div>
+<a href="https://checkout.stripe.com/c/pay/cs_live_a1J6qUMTgkH5KcyjPTEF9zSSS1LVXZ8cbJvOXAwcqNpDOHAiPTI0DavqXu#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="subscribe-button-link">SUBSCRIBE NOW</a>
+        </div>
+        
+        <div class="subscription-plans">
+            <h3>SUBSCRIPTION PLANS</h3>
+            
+            <div class="plan">
+                <div class="plan-details">
+                    <div class="plan-title">3 MONTHS (15% off)</div>
+                    <div class="plan-stats">225 POSTS · 341 MEDIA</div>
+                </div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1WZMAfPGS8WknwcCZcUEi5QkfWFOStXRyVGg5vDlUDUd66q2zltkxSDGl#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="plan-price-button">$25.50</a>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="plan-details">
+                    <div class="plan-title">6 MONTHS (30% off)</div>
+                    <div class="plan-stats">450 POSTS · 682 MEDIA</div>
+                </div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1PjOEMrEWWFjUxsvfskynYqHqYsw9bILfOAbyITh6Yn281vlKpvaUMRn8#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="plan-price-button">$42.00</a>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="plan-details">
+                    <div class="plan-title">12 MONTHS (50% off)</div>
+                    <div class="plan-stats">900 POSTS · 1364 MEDIA</div>
+                </div>
+                <div class="plan-price">
+                    <a href="https://checkout.stripe.com/c/pay/cs_live_a1XnZXoxO0SwnCFH9vZxHLHbVefnYBjZqXFncCPHNj6X48Cef7f1ZpmODO#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="plan-price-button">$80.00</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="posts-section">
+            <h2>SUBSCRIBE TO SEE THE POSTS</h2>
+            
+            <div class="post">
+                <div class="post-media locked">
+                    [Locked Content]
+                </div>
+                <div class="post-info">
+                    <p class="post-text">#1 on ONLYFANS for a reason 😊 come see why and if you join RIGHT NOW dm me to see my first ever masturbation video 😊 (don't tell my mom pls)</p>
+                    <div class="post-meta">
+                        <span>2 days ago</span>
+                        <span>$15.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post">
+                <div class="post-media locked">
+                    [Locked Content]
+                </div>
+                <div class="post-info">
+                    <p class="post-text">New photoset just dropped! You won't believe what I'm wearing in this one 😉</p>
+                    <div class="post-meta">
+                        <span>4 days ago</span>
+                        <span>$12.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post">
+                <div class="post-media locked">
+                    [Locked Content]
+                </div>
+                <div class="post-info">
+                    <p class="post-text">Q&A session - ask me anything and I'll answer the most interesting questions in a video!</p>
+                    <div class="post-meta">
+                        <span>1 week ago</span>
+                        <span>Free for subscribers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>Explore</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </div>
+        </div>
     </div>
-  </div>
+    
+    <div class="modal" id="subscriptionModal">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2 class="modal-title">Subscribe to Mayres Avelino</h2>
+        <p class="modal-text">Unlock exclusive content for only $5 for the first 31 days (50% discount)!</p>
+        
+        <div class="modal-buttons">
+            <a href="https://checkout.stripe.com/c/pay/cs_live_a1J6qUMTgkH5KcyjPTEF9zSSS1LVXZ8cbJvOXAwcqNpDOHAiPTI0DavqXu#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blppbHNgWjA0VzNda0c3SE5kQEY9aWpLcUBpa2pkMHFnZnF9RF13fVRtSEp0VEFWUTVSU2xEXW9QMmJffURdczR9XFxdMmJCdXFQSEdESHNqZEN1QWg2b1x8XTxANkRhNTVmNjE8fFNDaycpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyY0MjQyNDInKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl" class="modal-button primary">Subscribe with Card</a>
+            <button class="modal-button secondary" id="paypalBtn">Subscribe with PayPal</button>
+        </div>
+        <div class="paypal-email" id="paypalEmail">
+            Send payment to: <strong>avelinomayres@gmail.com</strong>
+        </div>
+    </div>
+</div>
 
-  <script>
-    const starsContainer = document.getElementById('stars');
-    const shootingContainer = document.getElementById('shooting-stars');
-
-    for (let i = 0; i < 300; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      const size = Math.random() * 2 + 1;
-      star.style.width = `${size}px`;
-      star.style.height = `${size}px`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.top = `${Math.random() * 100}%`;
-      starsContainer.appendChild(star);
-    }
-
-    function createShootingStar() {
-      const star = document.createElement('div');
-      star.classList.add('shooting-star');
-      star.style.left = `${Math.random() * window.innerWidth}px`;
-      star.style.top = `${Math.random() * window.innerHeight}px`;
-      const size = Math.random() * 3 + 2;
-      star.style.width = `${size}px`;
-      star.style.height = `${size}px`;
-      star.style.animation = `shooting ${Math.random() * 1.5 + 1}s linear forwards`;
-      shootingContainer.appendChild(star);
-      setTimeout(() => star.remove(), 2000);
-    }
-
-    setInterval(() => {
-      for (let i = 0; i < 10; i++) {
-        setTimeout(createShootingStar, i * 100);
-      }
-    }, 1000);
-  </script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const modal = document.getElementById('subscriptionModal');
+    const closeModal = document.querySelector('.close-modal');
+    const paypalBtn = document.getElementById('paypalBtn');
+    const paypalEmail = document.getElementById('paypalEmail');
+    
+    subscribeBtn.addEventListener('click', function() {
+        modal.style.display = 'flex';
+    });
+    
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        paypalEmail.style.display = 'none';
+    });
+    
+    paypalBtn.addEventListener('click', function() {
+        paypalEmail.style.display = paypalEmail.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            paypalEmail.style.display = 'none';
+        }
+    });
+});
+    </script>
 </body>
 </html>
