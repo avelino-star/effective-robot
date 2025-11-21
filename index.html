@@ -373,6 +373,7 @@
             object-position: center;
         }
         
+        /* REMOVIDO O OVERLAY AZUL TRANSPARENTE */
         .post-media.locked:after {
             content: '\f023';
             font-family: 'Font Awesome 5 Free';
@@ -383,9 +384,11 @@
             transform: translate(-50%, -50%);
             font-size: 40px;
             color: #fff;
-            background: rgba(0, 175, 240, 0.8);
-            width: 100%;
-            height: 100%;
+            /* REMOVIDO: background: rgba(0, 175, 240, 0.8); */
+            background: rgba(0, 0, 0, 0.5); /* Mudei para um overlay escuro mais neutro */
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
